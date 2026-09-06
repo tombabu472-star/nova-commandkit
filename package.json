@@ -1,7 +1,7 @@
 {
     "name": "@tombabu472-star/nova-commandkit",
     "description": "Beginner friendly command & event handler for Discord.js — a Node.js 24+ compatible fork of CommandKit.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
