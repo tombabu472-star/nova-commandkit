@@ -35,34 +35,9 @@
 
 ## Installation
 
-This package is distributed via **GitHub Packages** under the `@tombabu472-star`
-scope. Because GitHub Packages requires authentication (even for reads), you
-need a Personal Access Token (PAT) with `read:packages` scope to install it.
-
-### Step 1 — Create a PAT
-
-1. Go to https://github.com/settings/tokens (or Settings → Developer settings →
-   Personal access tokens → Tokens (classic)).
-2. Generate a new token with at least the **`read:packages`** scope.
-3. Copy the token (`ghp_...` or `github_pat_...`).
-
-### Step 2 — Authenticate npm to GitHub Packages
-
-Create or edit a file named `.npmrc` in your project root (or in `~/.npmrc` for
-global use):
-
-```ini
-# .npmrc
-@tombabu472-star:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE
-```
-
-> Tip: For CI, use an environment variable instead of pasting the token:
-> ```ini
-> //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-> ```
-
-### Step 3 — Install
+This package is published to the **public npm registry** — anyone can install
+it with no authentication or special setup. (It's also mirrored to GitHub
+Packages under the same name for users who prefer that registry.)
 
 ```bash
 npm install @tombabu472-star/nova-commandkit discord.js
@@ -83,10 +58,23 @@ pnpm add @tombabu472-star/nova-commandkit discord.js
 ### Install development version
 
 ```bash
-npm install nova-commandkit@dev
+npm install @tombabu472-star/nova-commandkit@dev
 ```
 
 > ⚠️ The development version is likely to have bugs.
+
+### Alternative: install from GitHub Packages
+
+If you prefer the GitHub Packages mirror (e.g. for private/alpha versions), it
+requires a GitHub PAT with `read:packages` scope. Create a `.npmrc`:
+
+```ini
+@tombabu472-star:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE
+```
+
+Then install the same way. See [`.npmrc.template`](./.npmrc.template) for a
+ready-to-use template.
 
 ## Usage
 

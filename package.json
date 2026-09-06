@@ -43,7 +43,8 @@
         "url": "https://github.com/tombabu472-star/nova-commandkit/issues"
     },
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
     },
     "keywords": [
         "discord.js",
