@@ -1,0 +1,86 @@
+{
+    "name": "@tombabu472-star/nova-commandkit",
+    "description": "Beginner friendly command & event handler for Discord.js — a Node.js 24+ compatible fork of CommandKit.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "bin": {
+        "nova-commandkit": "./bin/index.mjs",
+        "nova": "./bin/index.mjs"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "files": [
+        "dist",
+        "bin"
+    ],
+    "engines": {
+        "node": ">=20.10.0"
+    },
+    "scripts": {
+        "lint": "tsc",
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "deploy": "npm publish",
+        "deploy-dev": "npm publish --access public --tag dev",
+        "test": "cd ./tests && node ../bin/index.mjs dev",
+        "test:build": "cd ./tests && node ../bin/index.mjs build",
+        "test:prod": "cd ./tests && node ../bin/index.mjs start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tombabu472-star/nova-commandkit.git"
+    },
+    "homepage": "https://github.com/tombabu472-star/nova-commandkit#readme",
+    "bugs": {
+        "url": "https://github.com/tombabu472-star/nova-commandkit/issues"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "keywords": [
+        "discord.js",
+        "command handler",
+        "event handler",
+        "discord",
+        "bot",
+        "slash commands",
+        "node24",
+        "nova-commandkit",
+        "commandkit"
+    ],
+    "author": "Nova CommandKit Contributors",
+    "contributors": [
+        "Under Ctrl (original CommandKit author)"
+    ],
+    "dependencies": {
+        "commander": "^12.1.0",
+        "dotenv": "^16.4.5",
+        "esbuild": "^0.28.1",
+        "ora": "^8.1.1",
+        "rfdc": "^1.4.1",
+        "rimraf": "^6.0.2",
+        "tinyglobby": "^0.2.12",
+        "tsup": "^8.3.5"
+    },
+    "devDependencies": {
+        "@types/node": "^22.10.0",
+        "discord.js": "^14.16.3",
+        "tsx": "^4.19.2",
+        "typescript": "^5.6.3"
+    },
+    "peerDependencies": {
+        "discord.js": "^14"
+    },
+    "allowScripts": {
+        "esbuild@0.28.1": true,
+        "esbuild@0.27.7": true
+    }
+}

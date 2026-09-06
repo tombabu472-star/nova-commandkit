@@ -1,0 +1,10 @@
+# Copy this file to `.npmrc` in your bot project and replace YOUR_PAT with a
+# GitHub Personal Access Token that has `read:packages` scope.
+#
+# Create a PAT at: https://github.com/settings/tokens
+#
+# Once configured, you can install the package with:
+#   npm install @tombabu472-star/nova-commandkit
+
+@tombabu472-star:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE
