@@ -6,7 +6,7 @@
 
 [![node](https://img.shields.io/badge/node-%E2%89%A524.0.0-brightgreen)](https://nodejs.org)
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
-![GitHub package version](https://img.shields.io/github/package-json/v/tombabu472-star/nova-commandkit)
+[![npm](https://img.shields.io/npm/v/nova-commandkit)](https://www.npmjs.com/package/nova-commandkit)
 
 </div>
 
@@ -36,45 +36,37 @@
 ## Installation
 
 This package is published to the **public npm registry** — anyone can install
-it with no authentication or special setup. (It's also mirrored to GitHub
-Packages under the same name for users who prefer that registry.)
+it with no authentication or special setup.
 
 ```bash
-npm install @tombabu472-star/nova-commandkit discord.js
+npm install nova-commandkit discord.js
 ```
 
 Yarn:
 
 ```bash
-yarn add @tombabu472-star/nova-commandkit discord.js
+yarn add nova-commandkit discord.js
 ```
 
 pnpm:
 
 ```bash
-pnpm add @tombabu472-star/nova-commandkit discord.js
+pnpm add nova-commandkit discord.js
 ```
 
 ### Install development version
 
 ```bash
-npm install @tombabu472-star/nova-commandkit@dev
+npm install nova-commandkit@dev
 ```
 
 > ⚠️ The development version is likely to have bugs.
 
-### Alternative: install from GitHub Packages
+### Alternative: install from source
 
-If you prefer the GitHub Packages mirror (e.g. for private/alpha versions), it
-requires a GitHub PAT with `read:packages` scope. Create a `.npmrc`:
-
-```ini
-@tombabu472-star:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_PAT_HERE
+```bash
+npm install github:tombabu472-star/nova-commandkit
 ```
-
-Then install the same way. See [`.npmrc.template`](./.npmrc.template) for a
-ready-to-use template.
 
 ## Usage
 
@@ -83,7 +75,7 @@ This is a simple overview of how to set up this library with all the options.
 ```js
 // index.js
 const { Client, GatewayIntentBits } = require('discord.js');
-const { CommandKit } = require('@tombabu472-star/nova-commandkit');
+const { CommandKit } = require('nova-commandkit');
 const path = require('path');
 
 const client = new Client({
@@ -132,8 +124,8 @@ client.login('YOUR_TOKEN_HERE');
 a backward-compatible alias, so both of these work:
 
 ```js
-const { CommandKit } = require('@tombabu472-star/nova-commandkit');
-const { NovaCommandKit } = require('@tombabu472-star/nova-commandkit');
+const { CommandKit } = require('nova-commandkit');
+const { NovaCommandKit } = require('nova-commandkit');
 ```
 
 ## Command Line Interface

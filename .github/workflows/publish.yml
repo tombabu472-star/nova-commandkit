@@ -69,24 +69,30 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-github-packages:
-    name: Publish to GitHub Packages (bonus)
-    needs: build
-    runs-on: ubuntu-latest
-    continue-on-error: true # mirror only; don't fail the run if version already exists
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: dist
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@tombabu472-star'
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Note: GitHub Packages requires scoped package names (e.g. @owner/pkg).
+  # Since this package is published unscoped as "nova-commandkit" to npmjs.com
+  # so anyone can install it without auth, the GitHub Packages mirror is
+  # disabled. To re-enable it, scope the package name to @tombabu472-star and
+  # uncomment the job below.
+  #
+  # publish-github-packages:
+  #   name: Publish to GitHub Packages (bonus)
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   continue-on-error: true
+  #   permissions:
+  #     contents: read
+  #     packages: write
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: dist
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: '20'
+  #         registry-url: 'https://npm.pkg.github.com'
+  #         scope: '@tombabu472-star'
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
