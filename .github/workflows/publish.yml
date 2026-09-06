@@ -60,7 +60,7 @@ jobs:
           cache: 'npm'
       - name: Publish to npmjs.com (skipped if NPM_TOKEN not set)
         run: |
-          if [ -z "${NPM_TOKEN:-}" ]; then
+          if [ -z "${NODE_AUTH_TOKEN:-}" ]; then
             echo "::warning::NPM_TOKEN secret is not set — skipping npmjs.com publish."
             echo "::notice::Add an npm automation token as the NPM_TOKEN repo secret to enable public npm publishing."
             exit 0
@@ -73,6 +73,7 @@ jobs:
     name: Publish to GitHub Packages (bonus)
     needs: build
     runs-on: ubuntu-latest
+    continue-on-error: true # mirror only; don't fail the run if version already exists
     permissions:
       contents: read
       packages: write
